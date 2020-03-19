@@ -38,7 +38,7 @@ api.registerConnectorClass('below-site-header', 'experts-homepage', {
                     $('.below-site-header-outlet.experts-homepage').addClass("hidden");
                     component.set('displayCustomHomepage', false);
                 });
-                ajax("/c/3.json").then (function(result){
+                ajax("/tags/featuredresource.json").then (function(result){
                     topicListOne = [];
                     var usersOne = result.users;
                     result.topic_list.topics.slice(0,5).forEach(function(topic){
@@ -49,7 +49,7 @@ api.registerConnectorClass('below-site-header', 'experts-homepage', {
                     });
                     component.set('topicListOne', topicListOne);
                 });
-                ajax("/c/2.json").then (function(result){
+                ajax("/tags/webinars.json").then (function(result){
                     topicListTwo = [];
                     var usersTwo = result.users;
                     result.topic_list.topics.slice(0,5).forEach(function(topic){
@@ -122,7 +122,6 @@ api.registerConnectorClass('below-site-header', 'experts-homepage', {
                 <div class="box box-2">
                     <div class="header-wrapper">
                         <h3 class="inline">Featured Resources</h3>
-                        {{#d-button action="createChallenge" class="btn-primary btn right"}}POST{{/d-button}}
                     </div>
                     {{topic-list topics=topicListOne showPosters=true}}
                     {{#if site.mobileView}}
@@ -131,8 +130,7 @@ api.registerConnectorClass('below-site-header', 'experts-homepage', {
                 </div>
                 <div class="box box-2">
                     <div class="header-wrapper">
-                        <h3 class="inline">TopicListTwo</h3>
-                        {{#d-button action="createLink" class="btn-primary btn right"}}SHARE LINK{{/d-button}}
+                        <h3 class="inline">Webinars</h3>
                     </div>
                     {{topic-list topics=topicListTwo showPosters=true}}
                     {{#if site.mobileView}}
