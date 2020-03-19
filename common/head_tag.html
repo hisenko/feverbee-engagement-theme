@@ -98,15 +98,15 @@ api.registerConnectorClass('below-site-header', 'experts-homepage', {
                             <h3 id="cover_subtitle_whatnext">What Next?</h3>
                         {{/if}}
     {{else}}
-                        <h1 id="cover_title">Cover Title</h1>
-                        <h2 id="cover_subtitle">Cover Subtitle</h2>
+                        <h1 id="cover_title">Welcome to the community forum!</h1>
+                        <h2 id="cover_subtitle">This mobile and email friendly platform lets us connect on issues that affect our programs. Discuss problems, share solutions, seek opportunities.</h2>
     {{/if}}
                     </div>
                 </div>
             </div>
         </div>
     {{#if collapseHomepage}}
-        {{#d-button action="showHomepage" id="show-homepage" class="btn" icon="plus"}} View Intro{{/d-button}}
+        {{#d-button action="showHomepage" id="show-homepage" class="btn" icon="plus"}}View Intro{{/d-button}}
     {{else}}
         {{#d-button action="hideHomepage" id="hide-homepage" class="btn" icon="minus"}}Seen It{{/d-button}}
     {{/if}}
